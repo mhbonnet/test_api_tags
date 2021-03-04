@@ -5,6 +5,7 @@ import nltk
 from bs4 import BeautifulSoup
 from nltk.corpus import stopwords
 import spacy
+from functions.my_model import load_predict
 
 def find_tags(title=None, body=None):
     """Process the title and body provided
@@ -12,7 +13,8 @@ def find_tags(title=None, body=None):
     clean_title = preprocess_words(title)
     clean_body = preprocess_words(body)
 
-    return ['python', 'flask', 'nlp']
+    tags = load_predict(clean_title + clean_body)
+    return tags
 
 
 def preprocess_words(text):
