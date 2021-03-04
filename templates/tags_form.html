@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+      <title>API de test - proposition tags</title>
+      
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+  </head>
+
+  <body>
+    <div class="content">
+      <header>
+        <div class="header-background"></div>
+        <div class="title">
+          <h1>
+            Saisissez votre question
+          </h1>
+        </div>
+      </header>
+      
+      <main>
+      <form method="POST">
+        <div>
+          <label>Titre : 
+              <input type="text" name="title_input" required
+                     minlength="2" maxlength="256" size="50">
+          </label>
+        </div>
+        <div>
+            <label>Question :  
+                <textarea name="body_input" rows="10" cols="100"></textarea>
+            </label>
+          </div>
+        <input type="submit" value="Soumettre">
+       </form>
+      </main>
+    </div>
+  </body>
+</html>

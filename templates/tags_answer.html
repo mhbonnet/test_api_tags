@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>API de test - proposition tags</title>
+    
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+  </head>
+
+  <body>
+    <div class="content">
+        
+      <header>
+        <div class="header-background"></div>
+        <div class="title">
+          <h1>
+            Résultat de l'API
+          </h1>
+        </div>
+      </header>
+      
+      <main>
+        <div class="content">
+            <div id="recap">
+                <h1>Rappel de la question</h1>
+                {% if title %}
+                <h3>Titre : {{ title }}</h3>
+                {% else %}
+                <h3>Pas de titre</h3>
+                {% endif %}
+                <p></p>
+                {% if body %}
+                <h3>Question : {{ body }}</h3>
+                {% else %}
+                <h3>Pas de body</h3>
+                {% endif %}
+            </div>
+            <p></p><p></p><p></p>
+            <div id="answer">
+                <h1>Tags proposés</h1>
+                {% if tags %}
+                <p>{{ tags }}</p>
+                {% endif %}
+            </div>
+        </div>
+      </main>
+        
+    </div>
+  </body>
+</html>
