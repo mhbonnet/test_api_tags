@@ -22,20 +22,24 @@
           background-color: #f8f8f8;
           min-width: 300px;
           min-height: 100%;
-          color: #666;
           overflow: auto;
           display: inline-block;
           width: 100%;
-      }
-
-      a:hover {
-        font-weight: bold;
+          padding-left: 11em;
       }
 
       a {
         color: inherit;
         text-decoration: None;
       }
+      a:hover {
+        font-weight: bold;
+      }
+     a:link {
+        color: blue }
+     a:visited {
+        color: purple }
+
 
       .content {
           min-height: 100%;
@@ -47,7 +51,6 @@
       header {
           position: relative;
           margin-bottom: 10px;
-          margin-left: 100px;
           min-width: 300px;
       }
 
@@ -76,4 +79,5 @@
           font-size: 24px;
           font-weight: lighter;
           line-height: 26px;
+          color: darkcyan;
       }

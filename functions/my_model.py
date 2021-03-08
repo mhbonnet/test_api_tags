@@ -1,16 +1,16 @@
-# contiendra le modèle préalablement entrainé
-# à faire : importer le modèle et faire un predict
-
+# prediction tags à partir modèle pré entrainé
 from joblib import load
 
-def load_predict(text):
+def load_predict(clean_text, tag_string):
+    
     """Loads the trained model 
     and predict tags from the text"""
+    # récupération modele = pipeline tfidf vectorizer + modele
+    model = load('./model/pipeline_forest.joblib') 
     
-    file_name = 'my_trained_model.model'
-    print(file_name)
-    #model = load(file_name)
-    #tags = model.predict(text)
-    tags = ['python', 'flask', 'nlp', 'summer']
-    
-    return tags
+    # prédictions
+    predicted = model.predict([clean_text])
+    if predicted == 1:
+        return 'Tag {} : oui'.format(tag_string)
+    else:
+        return 'Tag {} : non'.format(tag_string)

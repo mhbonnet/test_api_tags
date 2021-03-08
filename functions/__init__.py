@@ -7,15 +7,6 @@ from nltk.corpus import stopwords
 import spacy
 from functions.my_model import load_predict
 
-def find_tags(title=None, body=None):
-    """Process the title and body provided
-    Returns the proposed tags"""
-    clean_title = preprocess_words(title)
-    clean_body = preprocess_words(body)
-
-    tags = load_predict(clean_title + clean_body)
-    return tags
-
 
 def preprocess_words(text):
     """Cleans the text provided and
@@ -41,3 +32,13 @@ def preprocess_words(text):
     # 6. Join the words back into one string separated by space, 
     # and return the result.
     return( " ".join(words_lem_spacy))  
+
+
+def find_tags(title=None, body=None):
+    """Process the title and body provided
+    Returns the proposed tags"""
+    clean_title = preprocess_words(title)
+    clean_body = preprocess_words(body)
+
+    tags = load_predict(clean_title + clean_body, 'python')
+    return tags

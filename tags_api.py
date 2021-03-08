@@ -10,7 +10,9 @@ app = Flask(__name__)
 # Exemple : fonction welcome associée à l’URL /
 @app.route("/")
 def welcome():
-    return "Welcome to the test api!"
+    return "Welcome to the test api!\
+    <p>Type the address : http://127.0.0.1:5000/tags_api\
+     or click here : <a href=\"http://127.0.0.1:5000/tags_api\">Test</a>"
 
 @app.route('/tags_api', methods=['GET', 'POST'])
 def form_extract():
