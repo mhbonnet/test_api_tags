@@ -8,13 +8,8 @@ app = Flask(__name__)
 # Avec Flask, les décorateurs sont utilisés pour 
 # associer une URL à une fonction. 
 # Exemple : fonction welcome associée à l’URL /
-@app.route("/")
-def welcome():
-    return "Welcome to the test api!\
-    <p>Type the address : http://127.0.0.1:5000/tags_api\
-     or click here : <a href=\"http://127.0.0.1:5000/tags_api\">Test</a>"
 
-@app.route('/tags_api', methods=['GET', 'POST'])
+@app.route('/', methods=['GET', 'POST'])
 def form_extract():
     # POST request
     if request.method == 'POST':
