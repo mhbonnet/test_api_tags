@@ -4,7 +4,6 @@ import re
 import nltk
 from bs4 import BeautifulSoup
 from nltk.corpus import stopwords
-import spacy
 from functions.my_model import load_predict
 
 
