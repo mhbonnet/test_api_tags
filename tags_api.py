@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, jsonify
 from functions import find_tags
 
 app = Flask(__name__)
@@ -24,6 +24,15 @@ def form_extract():
 
     # GET request ou erreur
     return render_template('tags_form.html')
+
+@app.route('/api/', methods=['POST'])
+def analyse_text():
+    my_title = request.form.get('title')
+    my_body = request.form.get('body')      
+    tags = find_tags(my_title, my_body)
+   
+    return jsonify(status='ok', tags=tags)
+
    
 if __name__ == "__main__":
     app.run(debug=True)
