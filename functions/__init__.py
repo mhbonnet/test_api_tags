@@ -25,13 +25,9 @@ def preprocess_words(text):
     sw = set(stopwords.words("english"))                  
     interest_words = [w for w in words if not w in sw]
     
-    # 5. Spacy lemmatization
-    nlp = spacy.load('en_core_web_sm', disable=['parser', 'ner'])
-    words_lem_spacy = [nlp(w)[0].lemma_ for w in interest_words] 
-
     # 6. Join the words back into one string separated by space, 
     # and return the result.
-    return( " ".join(words_lem_spacy))  
+    return( " ".join(interest_words))  
 
 
 def find_tags(title=None, body=None):
