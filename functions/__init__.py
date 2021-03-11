@@ -6,6 +6,7 @@ from bs4 import BeautifulSoup
 from nltk.corpus import stopwords
 from functions.my_model import load_predict
 
+nltk.download('stopwords')
 
 def preprocess_words(text):
     """Cleans the text provided and
