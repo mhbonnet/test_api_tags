@@ -34,6 +34,6 @@ def load_predict(text, tag_string):
     # prédictions
     predicted = model.predict([text])
     if predicted == 1:
-        return 'Tag {} : oui'.format(tag_string)
+        return tag_string
     else:
-        return 'Tag {} : non'.format(tag_string)
+        return None

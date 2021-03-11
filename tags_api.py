@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+import json
 from flask import Flask, request, render_template, jsonify
 from functions import find_tags
 
@@ -27,10 +28,13 @@ def form_extract():
 
 @app.route('/api/', methods=['POST'])
 def analyse_text():
-    my_title = request.form.get('title')
-    my_body = request.form.get('body')      
+    
+    data = json.loads(request.data)
+    
+    my_title = data['title']
+    my_body = data['body']
     tags = find_tags(my_title, my_body)
-   
+
     return jsonify(status='ok', tags=tags)
 
    
