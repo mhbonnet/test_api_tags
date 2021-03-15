@@ -9,6 +9,7 @@ from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 from joblib import load
 nltk.download('stopwords')
+nltk.download('wordnet')
 
 def preprocess_words_lemm(text):
     """Cleans the text provided and
