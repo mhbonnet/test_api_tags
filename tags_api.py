@@ -34,7 +34,8 @@ def analyse_text():
     my_title = data['title']
     my_body = data['body']
     tags = find_tags(my_title, my_body)
-
+    print(type(tags))
+    
     return jsonify(status='ok', tags=tags)
 
    

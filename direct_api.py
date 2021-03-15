@@ -7,8 +7,12 @@
 import requests
 import json
 
+# test 1 = write a title and body here, and send it
 a_title = "What about learning python and pip and html?"
 a_body = "I've always wondered if it was interesting. Because I'm not sure about what we can do with it... Let's check! I know java and c++, but I still don't know pandas very well, and I'm just starting with API. For HTML I know the basics."
+
+# test 2 = read a file?
+# to do
 
 url = "https://tags-api.herokuapp.com/api/"
 #url = "http://127.0.0.1:5000/api/"
