@@ -76,7 +76,7 @@ def get_main_tags(model, probas, prob_threshold=0):
     best_tags.sort_values(by=['proba'], ascending=False, inplace=True)
     return best_tags
 
-def load_predict(text, tag_string):
+def load_predict(text):
     """Loads the trained model 
     and predict tags from the text"""
 

@@ -1,1 +1,1 @@
-web: gunicorn tags_api:app
+web: gunicorn main:app
