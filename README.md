@@ -5,16 +5,25 @@ En fonction de la question posée par l'utilisateur (titre et corps de texte), l
 ## Mode opératoire :   
 Cloner ce repository sur votre ordinateur.    
 
-Deux modes de test sont disponibles :  
-1   - aller à l'adresse https://tags-api.herokuapp.com    
-    - saisissez votre question (titre et corps de texte) et appuyer sur le bouton 'soumettre'   
-    - le navigateur affiche les tags proposés pour votre question   
+Trois modes de test sont disponibles :  
+
+1. Saisir manuellement un titre et une question via un formulaire : 
+    - aller à l'adresse https://tags-api.herokuapp.com/
+    - saisir la question (titre et corps de texte) et appuyer sur le bouton 'soumettre'   
+    - le navigateur affiche les tags proposés sous forme de liste
     
-2   - dans le fichier direct_api.py, saisissez un titre et un texte à tester  
-    - en ligne de commande, lancez python direct_api.py  
-    - les tags attribués si visibles dans la console  
+2. Envoyer une requête POST directement à l'API : 
+    - url = "https://tags-api.herokuapp.com/api/"
+    - dict = {'title': a_title, 'body': a_body}
+    - headers = {'Content-type': 'application/json'}
+    - response = requests.post(url, json=dict, headers=headers)
+    - les tags proposés se trouvent dans le champ 'text' de la réponse
+    
+    voir un exemple dans le fichier example_api.py (retour de l'API lisible dans la console)
 
-## Note d'avancement :   
-A ce jour, le modèle retourne seulement si on attribue le tag 'python' ou pas.
+3. Appeler le modèle directement sans passer par l'API :
+    - importer la fonction : from functions import find_tags
+    - définir les titres et corps de la question (texte libre) : a_title, a_body
+    - appeler la fonction : tags = find_tags(a_title, a_body)
 
-## Librairies : voir requirements.txt
+## Librairies nécessaires : voir requirements.txt
