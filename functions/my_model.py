@@ -89,7 +89,7 @@ def load_predict(text):
     clean_text = preprocess_words_lemm(text, list_sw)
 
     # load trained model
-    model = load('./model/pipeline_SVC_OVR.joblib')
+    model = load('./model/pipeline_logistic_reg_multinom.joblib')
     model_probas = True
     
     # predict with 'predict_proba' (multi value) or 'predict' (one value)
