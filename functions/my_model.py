@@ -46,7 +46,7 @@ def preprocess_words_lemm(text, list_sw):
     the output is a single string = words concatenated"""
 
     text1 = convert_tags(text)
-    text2 = BeautifulSoup(text1).get_text().lower()
+    text2 = BeautifulSoup(text1, "lxml").get_text().lower()
     text3 = text2.replace('-', '')
     text3 = re.sub("[^a-zA-Z0-9]",   " ",  text3)  
     text3 = re.sub(r' \d*', ' ', text3)
@@ -89,7 +89,7 @@ def load_predict(text):
     clean_text = preprocess_words_lemm(text, list_sw)
 
     # load trained model
-    model = load('./model/pipeline_logistic_reg_multinom.joblib')
+    model = load('./model/pipeline_SVC_OVR.joblib')
     model_probas = True
     
     # predict with 'predict_proba' (multi value) or 'predict' (one value)
